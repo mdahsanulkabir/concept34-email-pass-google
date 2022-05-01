@@ -8,6 +8,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import Login from "./Components/Login/Login";
 import Videos from "./Components/Videos/Videos";
 import Home from "./Components/Home/Home";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export const BlogContext = createContext();
@@ -18,6 +19,7 @@ function App() {
   return (
     <BlogContext.Provider value={[blogs, setBlogs]}>
       <Navbar />
+      <Toaster />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
